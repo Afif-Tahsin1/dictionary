@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="hours">0</p>
+    <p>:</p>
+    <p id="minutes">0</p>
+    <p>:</p>
+    <p id="seconds">0</p>
+    <p>:</p>
+    <p id="mili">0</p>
+    <button onclick="start()">Start</button>
+    <input type="number" id="hours">
+    <input type="number" id="minutes">
+    <input type="number" id="seconds">
+    <button onclick="start2()">Start</button>
+
+    <script>
+        const hoursT = document.getElementById("hours");
+        const minutesT = document.getElementById("minutes");
+        const secondsT = document.getElementById("seconds");
+        const miliT = document.getElementById("mili")
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        let mili = 0;
+
+        function start() {
+            setTimeout(function () {
+                mili += 1;
+                miliT.textContent = mili;
+                start();
+            }, 10);
+            if (mili >= 100) {
+                mili = 0;
+                seconds++;
+                secondsT.textContent = seconds
+            }
+            if (seconds >= 60){
+                seconds = 0;
+                minutes ++;
+                minutesT.textContent = minutes;
+            }
+            if (minutes >= 60){
+                minutes = 0;
+                hours ++;
+                hours.textContent = hours;
+            }
+        }
+        function start2(){
+            
+        }
+    </script>
+</body>
+
+</html>
