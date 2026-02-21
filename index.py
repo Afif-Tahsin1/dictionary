@@ -4,7 +4,6 @@ student_data = {
     "id3" : {"name" : "Sara", "class" : "V", "subject_interagtion" : "english, math, science"},
     "id4" : {"name" : "Surya", "class" : "V", "subject_interagtion" : "english, math, science"},
 }
-
 result = {}
 seen = set()
 
