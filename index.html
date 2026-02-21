@@ -21,20 +21,28 @@
     <p>:</p>
     <p id="mili">0</p>
     <button onclick="start()">Start</button>
-    <input type="number" id="hours">
-    <input type="number" id="minutes">
-    <input type="number" id="seconds">
+    <input type="number" id="hours2">
+    <input type="number" id="minutes2">
+    <input type="number" id="seconds2">
     <button onclick="start2()">Start</button>
 
     <script>
         const hoursT = document.getElementById("hours");
         const minutesT = document.getElementById("minutes");
         const secondsT = document.getElementById("seconds");
-        const miliT = document.getElementById("mili")
+        const miliT = document.getElementById("mili");
+        const hoursT2 = document.getElementById("hours2").value;
+        const minutesT2 = document.getElementById("minutes2").value;
+        const secondsT2 = document.getElementById("seconds2").value;
+        
         let seconds = 0;
         let minutes = 0;
         let hours = 0;
         let mili = 0;
+
+        let seconds2 = 0;
+        let minutes2 = 0;
+        let hours2 = 0;
 
         function start() {
             setTimeout(function () {
@@ -59,7 +67,10 @@
             }
         }
         function start2(){
-            
+            setTimeout(function(){
+                const secondsN = Number(secondsT2);
+                seconds2 = secondsN - seconds2;
+            }, 1000)
         }
     </script>
 </body>
